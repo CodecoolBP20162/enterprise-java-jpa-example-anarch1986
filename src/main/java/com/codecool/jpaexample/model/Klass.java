@@ -11,13 +11,17 @@ public class Klass {
     private long id;
     private String name;
 
+    @Enumerated
+    private Enum location;
+
     @OneToMany(mappedBy = "klass")
     private Set<Student> students = new HashSet<>();
 
     public Klass() {}
 
-    public Klass(String name) {
+    public Klass(String name, Enum location) {
         this.name = name;
+        this.location = location;
     }
 
     public String getName() {
