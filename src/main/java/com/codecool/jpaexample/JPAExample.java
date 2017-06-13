@@ -45,7 +45,7 @@ public class JPAExample {
         student.setKlass(classBp2);
         System.out.println("address1: "+address.toString());
         System.out.println("student1: " + student.toString());
-        //classBp2.addStudent(student);
+        classBp2.addStudent(student);
 
         EntityTransaction transaction = em.getTransaction();
         transaction.begin();
@@ -61,7 +61,7 @@ public class JPAExample {
         student2.setKlass(classBp2);
         System.out.println("address2: "+address2.toString());
         System.out.println("student2: " + student2.toString());
-        //classBp2.addStudent(student2);
+        classBp2.addStudent(student2);
 
         transaction.begin();
         em.persist(student2);
