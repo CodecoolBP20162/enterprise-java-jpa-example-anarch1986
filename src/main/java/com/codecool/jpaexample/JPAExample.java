@@ -42,9 +42,10 @@ public class JPAExample {
         Address address = new Address("Hungary", "1234", "Budapest", "Macskakő út 5.");
         Student student = new Student("Ödön", "odon@tokodon.hu", birthDate1,phoneNumbers1, address);;
         address.setStudent(student);
+        student.setKlass(classBp2);
         System.out.println("address1: "+address.toString());
         System.out.println("student1: " + student.toString());
-        classBp2.addStudent(student);
+        //classBp2.addStudent(student);
 
         EntityTransaction transaction = em.getTransaction();
         transaction.begin();
@@ -57,9 +58,10 @@ public class JPAExample {
         Address address2 = new Address("Hungary", "6789", "Budapest", "Harap u. 3.");
         Student student2 = new Student("Aladár", "ktyfl@gmail.com", birthDate2, phoneNumbers2, address2);
         address2.setStudent(student2);
+        student2.setKlass(classBp2);
         System.out.println("address2: "+address2.toString());
         System.out.println("student2: " + student2.toString());
-        classBp2.addStudent(student2);
+        //classBp2.addStudent(student2);
 
         transaction.begin();
         em.persist(student2);

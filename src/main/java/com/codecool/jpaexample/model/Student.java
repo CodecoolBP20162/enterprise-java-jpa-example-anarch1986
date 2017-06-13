@@ -19,6 +19,7 @@ public class Student {
 
 
     @ManyToOne
+    @JoinColumn(name = "Class")
     private Klass klass;
 
     @Column(nullable = false,unique = true)
@@ -68,6 +69,8 @@ public class Student {
     public String getName() {
         return name;
     }
+
+    public void setKlass(Klass klass) {this.klass=klass;}
 
     public void setName(String name) {
         this.name = name;
